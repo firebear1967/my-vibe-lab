@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <title>My Vibe Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム名言ジェネレーター</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello from GitHub Pages ✨</h1>
-  <p>vibe coding is ON!🔥</p>
+
+    <!-- ▼▼▼ ページ全体のコンテンツをまとめるラッパー ▼▼▼ -->
+    <div class="page-content">
+
+        <!-- 1. タイトル（カードの外） -->
+        <h1>ランダム名言ジェネレーター</h1>
+
+        <!-- 2. 名言カード（この部分だけが白い背景になる） -->
+        <div class="container">
+            <div id="quote-display">
+                <p id="quote-text">ボタンを押して名言を表示</p>
+                <p id="quote-author"></p>
+            </div>
+        </div>
+
+        <!-- 3. ボタン（カードの外） -->
+        <button id="change-quote">新しい名言を表示</button>
+
+    </div>
+    <!-- ▲▲▲ ここまでラッパー ▲▲▲ -->
+
+    <script src="script.js"></script>
+
 </body>
 </html>
