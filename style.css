@@ -1,0 +1,113 @@
+/* Google Fontsから美しいフォントを読み込む */
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+
+/* ページ全体のスタイル */
+body {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    box-sizing: border-box;
+}
+
+/* ページコンテンツ全体のラッパー */
+.page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* タイトルのスタイル */
+h1 {
+    color: #2c3e50;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* 白い名言カードのスタイル 【変更点】 */
+.container {
+    width: 100%;
+    padding: 40px 50px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+
+    /* ↓↓↓ ここから追加・変更 ↓↓↓ */
+    min-height: 280px;      /* カードに最小の高さを設定して、高さを固定 */
+    display: flex;          /* 中の名言エリアを中央に配置するためにFlexboxを使用 */
+    align-items: center;    /* 名言エリアを垂直方向の中央に配置 */
+    /* ↑↑↑ ここまで追加・変更 ↑↑↑ */
+}
+
+/* 名言が表示されるエリアのスタイル 【変更点】 */
+#quote-display {
+    font-family: 'Yuji Syuku', serif;
+    font-size: 1.8em;
+    line-height: 1.7;
+    color: #34495e;
+    
+    /* ↓↓↓ 追加・変更 ↓↓↓ */
+    width: 100%; /* 親がFlexboxになったため幅を100%に指定 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* min-heightは親の.containerで高さを制御するため不要に */
+}
+
+#quote-display p {
+    margin: 0;
+}
+
+/* 作者名のスタイル */
+#quote-author {
+    text-align: right;
+    font-size: 1em;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* ボタンのスタイル */
+button {
+    padding: 12px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 25px;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* アニメーションのスタイル */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.7s ease-out forwards;
+}
