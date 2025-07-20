@@ -44,9 +44,10 @@ h1 {
     box-sizing: border-box;
 
     /* ↓↓↓ ここから追加・変更 ↓↓↓ */
-    min-height: 280px;      /* カードに最小の高さを設定して、高さを固定 */
+    height: 280px;          /* カードの高さを完全に固定 */
     display: flex;          /* 中の名言エリアを中央に配置するためにFlexboxを使用 */
     align-items: center;    /* 名言エリアを垂直方向の中央に配置 */
+    overflow: hidden;       /* はみ出した部分を隠す */
     /* ↑↑↑ ここまで追加・変更 ↑↑↑ */
 }
 
@@ -59,10 +60,13 @@ h1 {
     
     /* ↓↓↓ 追加・変更 ↓↓↓ */
     width: 100%; /* 親がFlexboxになったため幅を100%に指定 */
+    height: 100%; /* 親の高さに合わせる */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* min-heightは親の.containerで高さを制御するため不要に */
+    overflow-y: auto; /* 縦方向にスクロール可能 */
+    padding: 10px 0; /* 上下に少し余白 */
+    box-sizing: border-box;
 }
 
 #quote-display p {
@@ -129,7 +133,7 @@ button:active {
   
   /* モバイルでは高さを少し小さくして、パディングも調整 */
   .container {
-    min-height: 200px;
+    height: 200px;
     padding: 25px 20px;
   }
   
@@ -153,7 +157,7 @@ button:active {
 /* さらに小さな画面（スマートフォン）向け */
 @media (max-width: 480px) {
   .container {
-    min-height: 180px;
+    height: 180px;
     padding: 20px 15px;
   }
   
