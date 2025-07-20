@@ -111,3 +111,58 @@ button:active {
 .fade-in {
   animation: fadeIn 0.7s ease-out forwards;
 }
+
+/* モバイル端末向けのレスポンシブデザイン */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .page-content {
+    max-width: 100%;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* モバイルでは高さを少し小さくして、パディングも調整 */
+  .container {
+    min-height: 200px;
+    padding: 25px 20px;
+  }
+  
+  #quote-display {
+    font-size: 1.4em;
+    line-height: 1.6;
+  }
+  
+  #quote-author {
+    font-size: 0.9em;
+    margin-top: 15px;
+  }
+  
+  button {
+    padding: 10px 25px;
+    font-size: 0.9em;
+    margin-top: 20px;
+  }
+}
+
+/* さらに小さな画面（スマートフォン）向け */
+@media (max-width: 480px) {
+  .container {
+    min-height: 180px;
+    padding: 20px 15px;
+  }
+  
+  #quote-display {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  
+  #quote-author {
+    font-size: 0.8em;
+  }
+}
